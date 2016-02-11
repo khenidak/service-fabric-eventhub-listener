@@ -1,0 +1,9 @@
+C:\repos\service-fabric-eventhub-listener\src\EventHubListenerLib.Common\bin\Debug\EventHubListenerLib.Common.dll
+C:\repos\service-fabric-eventhub-listener\src\EventHubListenerLib.Common\bin\Debug\EventHubListenerLib.Common.pdb
+C:\repos\service-fabric-eventhub-listener\src\EventHubListenerLib.Common\obj\Debug\EventHubListenerLib.Common.csprojResolveAssemblyReference.cache
+C:\repos\service-fabric-eventhub-listener\src\EventHubListenerLib.Common\obj\Debug\EventHubListenerLib.Common.dll
+C:\repos\service-fabric-eventhub-listener\src\EventHubListenerLib.Common\obj\Debug\EventHubListenerLib.Common.pdb
+C:\repos\service-fabric-eventhub-listener\src\EventHubListenerLib.Common\bin\Debug\Microsoft.ServiceBus.dll
+C:\repos\service-fabric-eventhub-listener\src\EventHubListenerLib.Common\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\repos\service-fabric-eventhub-listener\src\EventHubListenerLib.Common\bin\Debug\Microsoft.ServiceBus.xml
+C:\repos\service-fabric-eventhub-listener\src\EventHubListenerLib.Common\bin\Debug\Microsoft.WindowsAzure.Configuration.xml
