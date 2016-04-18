@@ -1,0 +1,1 @@
+C:\repos\service-fabric-eventhub-listener\src\SampleAppX\obj\x64\Debug\SampleAppX.sfprojResolveAssemblyReference.cache

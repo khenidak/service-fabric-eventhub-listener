@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.ServiceBus.Messaging;
 using System.Text;
 using System.Diagnostics;
+using System.Fabric;
 
 namespace SampleStatefulSvc
 {
@@ -20,6 +21,11 @@ namespace SampleStatefulSvc
         private EventHubListener mEventHubListener;
         private string mEventHubConnectionString = "Endpoint=sb://{Namespace}.servicebus.windows.net/;SharedAccessKeyName={KeyName};SharedAccessKey={Key};TransportType=Amqp";
         private string mEventHubName = "{Event Hub Name}";
+
+        public SampleStatefulSvc(StatefulServiceContext context)
+            : base(context)
+        { }
+
 
         private ICommunicationListener CreateEventHubListener()
         {
@@ -54,8 +60,8 @@ namespace SampleStatefulSvc
                 then you can use this CTOR, the listener will not query other partitions of the service hence it won't need a fabriClient instance
                 var options = new EventHubListenerOptions(currentSFPartition);  
             */
-            var currentSFPartition = ServiceInitializationParameters.PartitionId.ToString();
-            var currentServiceName = ServiceInitializationParameters.ServiceName;
+            var currentSFPartition = this.Context.PartitionId.ToString();
+            var currentServiceName = this.Context.ServiceName;
 
             // if you have restricted access to cluster then you will need a to create a fabric client (with security) and pass it to the options
             var options = new EventHubListenerOptions(currentSFPartition, currentServiceName);

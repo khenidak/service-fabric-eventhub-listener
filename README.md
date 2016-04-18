@@ -70,8 +70,8 @@ var factory = new DefaultPartitionStateFactory(this.StateManager); // other over
     then you can use this CTOR, the listener will not query other partitions of the service hence it won't need a fabriClient instance
     var options = new EventHubListenerOptions(currentSFPartition);  
 */
-var currentSFPartition = ServiceInitializationParameters.PartitionId.ToString();
-var currentServiceName = ServiceInitializationParameters.ServiceName;
+          var currentSFPartition = this.Context.PartitionId.ToString();
+          var currentServiceName = this.Context.ServiceName;
 
 // if you have restricted access to cluster then you will need a to create a fabric client (with security) and pass it to the options
 var options = new EventHubListenerOptions(currentSFPartition, currentServiceName);
@@ -152,5 +152,5 @@ mEventHubListener = new EventHubListener(options);
 
 // In RunAsync()
     await mEventHubListener.StartAsync();
-     
+
 ```

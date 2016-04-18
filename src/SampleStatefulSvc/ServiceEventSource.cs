@@ -65,37 +65,19 @@ namespace SampleStatefulSvc
         }
 
         [NonEvent]
-        public void ServiceMessage(StatelessService service, string message, params object[] args)
-        {
-            if (this.IsEnabled())
-            {
-                string finalMessage = string.Format(message, args);
-                ServiceMessage(
-                    service.ServiceInitializationParameters.ServiceName.ToString(),
-                    service.ServiceInitializationParameters.ServiceTypeName,
-                    service.ServiceInitializationParameters.InstanceId,
-                    service.ServiceInitializationParameters.PartitionId,
-                    service.ServiceInitializationParameters.CodePackageActivationContext.ApplicationName,
-                    service.ServiceInitializationParameters.CodePackageActivationContext.ApplicationTypeName,
-                    FabricRuntime.GetNodeContext().NodeName,
-                    finalMessage);
-            }
-        }
-
-        [NonEvent]
         public void ServiceMessage(StatefulService service, string message, params object[] args)
         {
             if (this.IsEnabled())
             {
                 string finalMessage = string.Format(message, args);
                 ServiceMessage(
-                    service.ServiceInitializationParameters.ServiceName.ToString(),
-                    service.ServiceInitializationParameters.ServiceTypeName,
-                    service.ServiceInitializationParameters.ReplicaId,
-                    service.ServiceInitializationParameters.PartitionId,
-                    service.ServiceInitializationParameters.CodePackageActivationContext.ApplicationName,
-                    service.ServiceInitializationParameters.CodePackageActivationContext.ApplicationTypeName,
-                    FabricRuntime.GetNodeContext().NodeName,
+                    service.Context.ServiceName.ToString(),
+                    service.Context.ServiceTypeName,
+                    service.Context.ReplicaId,
+                    service.Context.PartitionId,
+                    service.Context.CodePackageActivationContext.ApplicationName,
+                    service.Context.CodePackageActivationContext.ApplicationTypeName,
+                    service.Context.NodeContext.NodeName,
                     finalMessage);
             }
         }
