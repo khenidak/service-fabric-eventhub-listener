@@ -11,7 +11,7 @@ An Event Hub receiver that runs on Microsoft Azure Service Fabric. The listener 
 
 The sample Service Fabric application contains a complete working service that uses the listener.
 
-```
+```csharp
 // implement IEventHubEventsProcessor
 
 class myEventProcessor : IEventHubEventsProcessor
